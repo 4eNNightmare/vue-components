@@ -1,0 +1,52 @@
+{
+  "name": "vue-components",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "lint": "vue-cli-service lint",
+    "serve": "vue-cli-service styleguidist",
+    "build": "vue-cli-service styleguidist:build"
+  },
+  "dependencies": {
+    "chroma-js": "^2.1.0",
+    "core-js": "^3.6.4",
+    "vue": "^2.6.11",
+    "vue-styled-components": "^1.4.14"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.7",
+    "@vue/cli-plugin-babel": "^4.2.0",
+    "@vue/cli-plugin-eslint": "^4.2.0",
+    "@vue/cli-service": "^4.2.0",
+    "@vue/eslint-config-standard": "^5.1.0",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
+    "babel-preset-vue": "^2.0.2",
+    "eslint": "^6.7.2",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "eslint-plugin-vue": "^6.1.2",
+    "lint-staged": "^9.5.0",
+    "vue-cli-plugin-styleguidist": "^4.14.0",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "bit": {
+    "env": {
+      "compiler": "bit.envs/bundlers/vue@2.6.21"
+    },
+    "componentsDefaultDirectory": "components/{name}",
+    "defaultScope": "nightmare4en.vue-components",
+    "packageManager": "npm"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,vue}": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  }
+}
